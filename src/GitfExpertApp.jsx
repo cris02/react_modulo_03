@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { AddCategory } from './components/AddCategory';
 
 export const GitfExpertApp = () => {
   const [categories, setCategories] = useState(['One Punch', 'Dragon Ball']);
@@ -23,7 +24,8 @@ export const GitfExpertApp = () => {
   return (
     <>
       <h1>GitfExpertApp</h1>
-      <button onClick={onAddCategory}>Agregar</button>
+      <AddCategory setCategories = { setCategories } />
+
       <ol>
         {
           categories.map( c => {
