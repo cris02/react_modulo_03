@@ -6,25 +6,29 @@ export const GitfExpertApp = () => {
   
 
   // funcion que agrega una nueva seccion
-  const onAddCategory = () => {
+  const onAddCategory = (newCategory) => {
     /*setCategories([
       ...categories,
       'Poquemon'
     ]);*/
 
+    // segunda forma
+    //setCategories(cat => [ ...cat, 'pokemon']);
+
     setCategories([
-      'Pokemon',
+      newCategory,
       ...categories
     ]);
 
-    // segunda forma
-    //setCategories(cat => [ ...cat, 'pokemon']);
+    
   }
 
   return (
     <>
       <h1>GitfExpertApp</h1>
-      <AddCategory setCategories = { setCategories } />
+      <AddCategory 
+        onNewCategory = { onAddCategory }
+      />
 
       <ol>
         {

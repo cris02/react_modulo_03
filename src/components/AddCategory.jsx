@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export const AddCategory = ({ setCategories }) => {
+export const AddCategory = ({ onNewCategory }) => {
 
     //declaracion del hook
     const [ inputValue, setInputValue ] = useState('')
@@ -13,11 +13,10 @@ export const AddCategory = ({ setCategories }) => {
     const onSubmit = (event) => {
         event.preventDefault();
         if (inputValue.trim().length <= 1) return; 
-        //settear el hook del componente padre
-        setCategories((categories) => [
-            inputValue,
-            ...categories          
-        ]);
+
+        //emite la funcion que envia el componente padre
+        onNewCategory(inputValue.trim());
+
         setInputValue('');
     }
   return (
