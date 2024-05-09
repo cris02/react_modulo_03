@@ -16,9 +16,9 @@ export const AddCategory = ({ onNewCategory }) => {
 
         //emite la funcion que envia el componente padre
         onNewCategory(inputValue.trim());
-
         setInputValue('');
     }
+    
   return (
     <form onSubmit={onSubmit}>
         <input 
